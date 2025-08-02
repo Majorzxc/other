@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сообщение для тебя</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .message {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .hidden-part {
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+        
+        .hidden-part:hover {
+            background: #e8f4fd;
+            border-color: #2196F3;
+            transform: translateY(-2px);
+        }
+        
+        .hidden-content {
+            display: none;
+            color: #2196F3;
+            font-weight: bold;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .click-hint {
+            color: #888;
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .revealed {
+            background: linear-gradient(45deg, #FFE5E5, #FFB6C1) !important;
+            border-color: #FF69B4 !important;
+            color: #C41E3A;
+        }
+        
+        .heart {
+            display: inline-block;
+            color: #ff6b6b;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            margin: 0 5px;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .final-message {
+            display: none;
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            border-radius: 15px;
+            padding: 25px;
+            margin-top: 30px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            animation: slideIn 1s ease;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #856404;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="instructions">
+            <strong>Инструкция:</strong> Нажимай на серые блоки, чтобы открыть скрытые части сообщения! 💫
+        </div>
+        
+        <div class="message">
+            <p>Дорогая, я долго думал и понял...</p>
+            
+            <p>что я больше не</p>
+            
+            <div class="hidden-part" data-index="0">
+                <div class="click-hint">[ Нажми, чтобы открыть ]</div>
+                <div class="hidden-content">смогу жить без тебя! Ты мой мир и <span class="heart">❤️</span></div>
+            </div>
+            
+            <p>могу представить свою жизнь</p>
+            
+            <div class="hidden-part" data-index="1">
+                <div class="click-hint">[ Нажми, чтобы открыть ]</div>
+                <div class="hidden-content">только рядом с тобой, потому что ты <span class="heart">💕</span></div>
+            </div>
+            
+            <p>без тебя. Мне кажется, что наши отношения</p>
+            
+            <div class="hidden-part" data-index="2">
+                <div class="click-hint">[ Нажми, чтобы открыть ]</div>
+                <div class="hidden-content">самое прекрасное, что случилось в моей жизни! Они <span class="heart">✨</span></div>
+            </div>
+            
+            <p>никуда не ведут и я думаю нам стоит</p>
+            
+            <div class="hidden-part" data-index="3">
+                <div class="click-hint">[ Нажми, чтобы открыть ]</div>
+                <div class="hidden-content">построить вместе что-то невероятное! Давай <span class="heart">💖</span></div>
+            </div>
+            
+            <p>расстаться</p>
+            
+            <div class="hidden-part" data-index="4">
+                <div class="click-hint">[ Нажми, чтобы открыть ]</div>
+                <div class="hidden-content">с прошлым и начнем новую главу нашей любви! <span class="heart">🌟</span></div>
+            </div>
+            
+            <p>Потому что ты мне</p>
+            
+            <div class="hidden-part" data-index="5">
+                <div class="click-hint">[ Нажми, чтобы открыть ]</div>
+                <div class="hidden-content">безумно дорога и я тебя <span class="heart">💝</span></div>
+            </div>
+            
+            <p>надоела</p>
+            
+            <div class="hidden-part" data-index="6">
+                <div class="click-hint">[ Нажми, чтобы открыть ]</div>
+                <div class="hidden-content">заставляешь чувствовать себя самым счастливым человеком на земле! <span class="heart">🥰</span></div>
+            </div>
+        </div>
+        
+        <div id="finalMessage" class="final-message">
+            <span class="heart">💝</span> Ты самое дорогое, что у меня есть! <span class="heart">💝</span>
+            <br><br>
+            Каждый день с тобой - это подарок, и я благодарен судьбе за то, что она свела нас вместе!
+            <br><br>
+            <small>С безумной любовью, твой парень 😘💕</small>
+        </div>
+    </div>
+
+    <script>
+        let revealedCount = 0;
+        const totalParts = 7;
+        
+        // Ждем полной загрузки страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            // Находим все скрытые части
+            const hiddenParts = document.querySelectorAll('.hidden-part');
+            
+            // Добавляем обработчики событий
+            hiddenParts.forEach(function(part) {
+                part.addEventListener('click', function() {
+                    revealPart(this);
+                });
+                
+                // Дополнительно добавляем обработчик на касание для мобильных
+                part.addEventListener('touchstart', function(e) {
+                    e.preventDefault();
+                    revealPart(this);
+                });
+            });
+        });
+        
+        function revealPart(element) {
+            // Проверяем, не открыт ли уже этот блок
+            if (element.classList.contains('revealed')) {
+                return;
+            }
+            
+            const clickHint = element.querySelector('.click-hint');
+            const hiddenContent = element.querySelector('.hidden-content');
+            
+            if (clickHint && hiddenContent) {
+                clickHint.style.display = 'none';
+                hiddenContent.style.display = 'block';
+                element.classList.add('revealed');
+                
+                revealedCount++;
+                
+                // Если все части открыты, показываем финальное сообщение
+                if (revealedCount === totalParts) {
+                    setTimeout(function() {
+                        const finalMessage = document.getElementById('finalMessage');
+                        if (finalMessage) {
+                            finalMessage.style.display = 'block';
+                        }
+                    }, 500);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
